@@ -1,7 +1,13 @@
 'use client';
 import Image from "next/image";
 
-const Avvatar  = () => {
+interface AvatarProps {
+    src?: string | null | undefined;
+}
+
+const Avvatar: React.FC<AvatarProps>  = ({
+    src
+}) => {
     return ( <div>
        <Image 
         className=" rounded-full"
@@ -9,7 +15,7 @@ const Avvatar  = () => {
         width={30}
         alt="Avatar"
         priority
-        src="/images/placeholder.jpg"    
+        src={src || "/images/placeholder.jpg" }   
        /> 
     </div>  );
 }
